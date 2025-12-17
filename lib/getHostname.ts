@@ -1,7 +1,8 @@
+"use server";
+import { headers } from "next/headers";
 import { hostname } from "os";
 
-export const dynamic = 'force-dynamic';
-
-export function getHostname(): string {
+export async function getHostname() {
+  headers();
   return hostname() || "not known";
 }
